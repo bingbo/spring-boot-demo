@@ -60,6 +60,26 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <!--imageName指定了镜像的名字-->
+                    <imageName>${project.artifactId}</imageName>
+                    <!--dockerDirectory指定Dockerfile的位置-->
+                    <dockerDirectory>.</dockerDirectory>
+                    <!--resources是指那些需要和Dockerfile放在一起，在构建镜像时使用的文件，一般应用jar包需要纳入-->
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
