@@ -1,4 +1,4 @@
-package com.ibingbo.spring.boot;
+package com.ibingbo.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
