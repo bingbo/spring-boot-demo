@@ -166,3 +166,43 @@ docker run -p 8080:8080 --name demo-app --link demo-mysql:mysql -d spring-boot-d
 ```
 
 > 注意mysql url连接方式：`spring.datasource.url=jdbc:mysql://mysql:3306/test`
+
+## 通过Docker-compose进行整合集成多个docker镜像
+
+### 在根目录下新建docker-compose.yml文件
+
+```yaml
+web:
+  build: .
+  ports:
+    - "8080:8080"
+  links:
+    - mysql
+
+mysql:
+  image: mysql:5.6
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+    MYSQL_DATABASE: test
+  ports:
+    - "3306:3306"
+  volumes:
+    # 挂载 Mysql 数据目录，持久化数据库。
+      - ./data/mysql:/var/lib/mysql
+    #  - ./config/mysql:/etc/mysql/conf.d
+  restart: always
+```
+
+### 编译构建web
+
+```
+docker-compose build
+```
+
+### 启动web服务运行
+
+```bash
+docker-compose up
+```
+
+> 可通过`docker ps`查看启动的服务
