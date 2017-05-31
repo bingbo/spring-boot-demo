@@ -164,3 +164,5 @@ docker run --name demo-mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=tes
 ```
 docker run -p 8080:8080 --name demo-app --link demo-mysql:mysql -d spring-boot-demo
 ```
+
+> 注意mysql url连接方式：`spring.datasource.url=jdbc:mysql://mysql:3306/test`
