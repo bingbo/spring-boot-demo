@@ -153,12 +153,14 @@ public class Application {
 
 ### 添加并运行mysql镜像
 
-```docker run --name demo-mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -p 3306:3306 -d mysql:5.6
+```
+docker run --name demo-mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -p 3306:3306 -d mysql:5.6
 ```
 
 可以通过mysql客户端登录进行操作，如`mysql -uroot -h172.20.146.12 -p123456 -Dtest -P3306`
 
 ### 通过连接--link形式与mysql通信
 
-```docker run -p 8080:8080 --name demo-app --link demo-mysql:mysql -d spring-boot-demo
+```
+docker run -p 8080:8080 --name demo-app --link demo-mysql:mysql -d spring-boot-demo
 ```
