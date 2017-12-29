@@ -8,9 +8,9 @@
         <format>dir</format>
     </formats>
     <!--指定要包含在程序集中的共享组件xml文件位置,当找到多个componentDescriptors时，它们的内容被合并-->
-    <componentDescriptors>
-        <componentDescriptor>src/main/assembly/assembly_component.xml</componentDescriptor>
-    </componentDescriptors>
+    <!--<componentDescriptors>-->
+        <!--<componentDescriptor>src/main/assembly/assembly_component.xml</componentDescriptor>-->
+    <!--</componentDescriptors>-->
     <!--是否包含根目录，默认为true -->
     <includeBaseDirectory>true</includeBaseDirectory>
     <!--设置生成的程序集归档的基本目录，默认拿${project.build.finalName}代替-->
@@ -83,10 +83,10 @@
         </dependencySet>
     </dependencySets>
     <!--定义要包含在程序集中的Maven仓库,包含元信息sha1和md5校验和，会在包中生成一个maven2目录-->
-    <repositories>
-        <repository>
-            <includeMetadata>true</includeMetadata>
-            <outputDirectory>maven2</outputDirectory>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<includeMetadata>false</includeMetadata>-->
+            <!--<outputDirectory>maven2</outputDirectory>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 </assembly>
