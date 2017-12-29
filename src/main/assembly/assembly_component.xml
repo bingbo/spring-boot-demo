@@ -1,0 +1,21 @@
+<component>
+    <dependencySets>
+        <!--依赖关系集允许在程序集中包含和排除项目依赖关系-->
+        <dependencySet>
+            <!--设置输出目录相对于程序集根目录的根目录-->
+            <outputDirectory>lib</outputDirectory>
+            <!--定义一组依赖项工件坐标以排除,工件坐标可以以简单的groupId：artifactId形式给出，或者可以以groupId：artifactId：type [：classifier]：version的形式完全限定。另外，可以使用通配符，如*：maven- *-->
+            <excludes>
+                <exclude>com.ibingbo.boot:demo-conf</exclude>
+            </excludes>
+            <includes>
+                <include>com.ibingbo.boot:demo-bean</include>
+                <include>com.ibingbo.boot:demo-controller</include>
+                <include>com.ibingbo.boot:demo-dao</include>
+                <include>com.ibingbo.boot:demo-mapper</include>
+                <include>com.ibingbo.boot:demo-service</include>
+                <include>com.ibingbo:spring-boot-demo:jar:1.0-SNAPSHOT</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+</component>
